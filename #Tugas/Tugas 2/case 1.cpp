@@ -1,51 +1,63 @@
-
 #include <iostream>
+#include <string>
 using namespace std;
 
+class Siswa {
+private:
+    string nama;
+    int nim;
+    int nilaiTugas1, nilaiTugas2, nilaiTugas3;
+
+public:
+    // Konstruktor
+    Siswa(string _nama, int _nim) {
+        nama = _nama;
+        nim = _nim;
+    }
+
+    // Menampilkan data siswa
+    void tampilkanData() {
+        cout << "Nama siswa: " << nama << endl;
+        cout << "NIM: " << nim << endl;
+    }
+
+    // Input nilai tugas
+    void inputNilaiTugas() {
+        cout << "Masukkan nilai Tugas 1: ";
+        cin >> nilaiTugas1;
+        cout << "Masukkan nilai Tugas 2: ";
+        cin >> nilaiTugas2;
+        cout << "Masukkan nilai Tugas 3: ";
+        cin >> nilaiTugas3;
+    }
+
+    // Menghitung rata-rata nilai tugas
+    void hitungRataRata() {
+        float rataRata = (nilaiTugas1 + nilaiTugas2 + nilaiTugas3) / 3.0;
+        cout << "Rata-rata nilai tugas: " << rataRata << endl;
+    }
+};
+
 int main() {
-    char nama[100] = "Ayunita Thalia N";
-    cout << "Siswa yang bernama: " << endl;
-    cout << nama << endl;
+    string namaSiswa;
+    int nimSiswa;
 
-    int a, b, c;
+    cout << "Masukkan nama siswa: ";
+    getline(cin, namaSiswa);
+    cout << "Masukkan NIM siswa: ";
+    cin >> nimSiswa;
 
-    cout << "Menghitung Rata-rata\n";
-    cout << "-------------------------\n";
-    cout << "Tanpa Konversi\n";
-    cout << "Dengan Konversi\n";
-    cout << "-------------------------\n";
+    // Membuat objek siswa
+    Siswa siswa(namaSiswa, nimSiswa);
 
-    // Nilai Keaktifan
-    // Nilai Tugas
-    // Nilai Ujiann
+    cout << "Data siswa: " << endl;
+    siswa.tampilkanData();
 
-    cout << "Inputkan nilai a: ";
-    cin >> a;
-    cout << "Inputkan nilai b: ";
-    cin >> b;
-    cout << "Inputkan nilai c: ";
-    cin >> c;
+    // Input nilai tugas
+    siswa.inputNilaiTugas();
 
-    // Menggunakan operator perkalian
-    int nilaiKeaktifan = a * 20 / 100;
-    
-    cout << "Hasil Nilai Keaktifan adalah = " << nilaiKeaktifan << endl;
-
-    // Menggunakan operator perkalian
-    int nilaiTugas = b * 50 / 100;
-    cout << "Hasil Nilai Tugas adalah = " << nilaiTugas << endl;
-
-    // Menggunakan operator perkalian
-    int nilaiUlangan = c * 30 / 100;
-    cout << "Hasil Nilai Ulangan adalah = " << nilaiUlangan << endl;
-
-    // Perhitungan Rata-Rata
-    float nilaiRata_rata = (nilaiKeaktifan + nilaiTugas + nilaiUlangan) / 3.0;
-    cout << "Rata-rata Nilai adalah = " << nilaiRata_rata << endl;
-
-    //output
-    cout <<" jadi siswa yang bernama:"<<nama << endl;
-    cout<<"memperoleh nilai akhir sebesar:"<< nilaiRata_rata<<endl;
+    // Menghitung rata-rata nilai tugas
+    siswa.hitungRataRata();
 
     return 0;
 }
