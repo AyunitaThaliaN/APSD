@@ -17,7 +17,7 @@ int main() {
 
     // Nilai Keaktifan
     // Nilai Tugas
-    // Nilai Ujian
+    // Nilai Ujiann
 
     cout << "Inputkan nilai a: ";
     cin >> a;
